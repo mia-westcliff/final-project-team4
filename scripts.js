@@ -1,11 +1,20 @@
+Vue.component('slogan', {
+    template: '<h1>Dive into Adventure with Splashes!</h1>'
+});
+
+var vm1 = new Vue({
+    el: '.hero'
+});
+
+
 // Custom scripts for Splashes Home Page interactions
 
-$(document).ready(function() {
+$(document).ready(function () {
     // Initialize Bootstrap components
     $('.carousel').carousel();
 
     // Smooth scrolling for in-page navigation
-    $('a[href*="#"]').on('click', function(e) {
+    $('a[href*="#"]').on('click', function (e) {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top
@@ -13,15 +22,15 @@ $(document).ready(function() {
     });
 
     // Focus on child's name input field when registration modal is opened
-    $('#registerModal').on('shown.bs.modal', function() {
+    $('#registerModal').on('shown.bs.modal', function () {
         $('#childName').trigger('focus');
     });
 
     // Simple form validation for registration form
-    $('#registerModal form').on('submit', function(e) {
+    $('#registerModal form').on('submit', function (e) {
         e.preventDefault();
         var isValid = true;
-        $(this).find('input[required]').each(function() {
+        $(this).find('input[required]').each(function () {
             if ($(this).val() === '') {
                 isValid = false;
                 $(this).addClass('is-invalid');
@@ -48,9 +57,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form Validation and Confirmation Message
-document.querySelector('.registration form').addEventListener('submit', function(e) {
+document.querySelector('.registration form').addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     let isValid = true;
     const inputs = this.querySelectorAll('input, select, textarea');
 
